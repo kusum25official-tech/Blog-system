@@ -1,0 +1,865 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+
+    background:#f5f7fb;
+
+    color:#333;
+
+    line-height:1.6;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+}
+
+header h1{
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:#d1d5db;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav{
+
+    margin-top:15px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    margin:8px;
+
+    display:inline-block;
+
+    background:#2563eb;
+
+    border-radius:40px;
+
+    transition:.4s;
+
+    font-weight:500;
+
+}
+
+nav a:hover{
+
+    background:#f59e0b;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+   HORIZONTAL LINE
+========================== */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#ddd;
+
+    margin:40px auto;
+
+    width:90%;
+
+}
+
+/* ==========================
+   BANNER IMAGE
+========================== */
+
+img{
+
+    max-width:100%;
+
+}
+
+.banner{
+
+    width:92%;
+
+    height:380px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    margin-top:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+/* ==========================
+   SECTION
+========================== */
+
+section{
+
+    width:90%;
+
+    margin:auto;
+
+    padding:40px 0;
+
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+h2{
+
+    text-align:center;
+
+    font-size:36px;
+
+    color:#1e293b;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    color:#2563eb;
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+}
+
+p{
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+button,
+input[type="submit"],
+input[type="reset"]{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+
+    background:#f59e0b;
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================
+   CENTER
+========================== */
+
+center{
+
+    padding:20px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+    margin-top:50px;
+
+}
+
+footer p{
+
+    margin:8px;
+
+}
+
+/* ==========================
+   SMOOTH SCROLL
+========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+/* ==========================
+   BLOG CARDS
+========================== */
+
+table{
+
+    width:90%;
+
+    margin:30px auto;
+
+    border-collapse:collapse;
+
+    background:#fff;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+table td,
+table th{
+
+    border:1px solid #e5e7eb;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+table th{
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+table img{
+
+    width:250px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    transition:.4s;
+
+}
+
+table img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================
+   BLOG TITLE
+========================== */
+
+table h3{
+
+    margin-top:15px;
+
+    color:#1e3a8a;
+
+    font-size:25px;
+
+}
+
+table p{
+
+    margin:15px 0;
+
+    color:#555;
+
+}
+
+/* ==========================
+   FORM
+========================== */
+
+form{
+
+    width:90%;
+
+    margin:auto;
+
+}
+
+/* ==========================
+   INPUT
+========================== */
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=date],
+input[type=file],
+input[type=number],
+select,
+textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+/* ==========================
+   FOCUS
+========================== */
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border:2px solid #2563eb;
+
+    box-shadow:0 0 10px rgba(37,99,235,.25);
+
+}
+
+/* ==========================
+   TEXTAREA
+========================== */
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/* ==========================
+   RADIO
+========================== */
+
+input[type=radio],
+input[type=checkbox]{
+
+    margin-right:8px;
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================
+   LABEL
+========================== */
+
+label{
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   LIST
+========================== */
+
+ul{
+
+    width:80%;
+
+    margin:auto;
+
+    padding-left:30px;
+
+}
+
+ul li{
+
+    margin:10px 0;
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   ORDERED LIST
+========================== */
+
+ol{
+
+    width:80%;
+
+    margin:auto;
+
+    padding-left:30px;
+
+}
+
+ol li{
+
+    margin:10px 0;
+
+    font-size:17px;
+
+}
+
+/* ==========================
+   CATEGORY BOX
+========================== */
+
+.category-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+/* ==========================
+   FEATURE BOX
+========================== */
+
+.feature-box{
+
+    background:#ffffff;
+
+    border-left:5px solid #2563eb;
+
+    padding:20px;
+
+    margin:20px auto;
+
+    width:90%;
+
+    border-radius:10px;
+
+}
+
+/* ==========================
+   IMAGE EFFECT
+========================== */
+
+img{
+
+    transition:.4s;
+
+}
+
+img:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ==========================
+   BUTTON SPACING
+========================== */
+
+button{
+
+    margin-top:10px;
+
+}
+
+/* ==========================
+   FORM BUTTON
+========================== */
+
+input[type=submit],
+input[type=reset]{
+
+    margin:10px;
+
+    min-width:170px;
+
+}
+/* =====================================
+      FOOTER
+===================================== */
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+footer h2,
+footer h3{
+
+    color:white;
+
+}
+
+footer p{
+
+    color:#d1d5db;
+
+    margin:8px;
+
+}
+
+footer a{
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+footer a:hover{
+
+    color:#f59e0b;
+
+}
+
+/* =====================================
+      LINKS
+===================================== */
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    color:#f59e0b;
+
+}
+
+/* =====================================
+      CARD HOVER
+===================================== */
+
+table td{
+
+    transition:.4s;
+
+}
+
+table td:hover{
+
+    background:#f8fafc;
+
+    transform:translateY(-6px);
+
+}
+
+/* =====================================
+      IMAGE SHADOW
+===================================== */
+
+img{
+
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+/* =====================================
+      SECTION ANIMATION
+===================================== */
+
+section{
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================
+      SCROLL BAR
+===================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e5e7eb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* =====================================
+      SELECTION
+===================================== */
+
+::selection{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* =====================================
+      RESPONSIVE
+===================================== */
+
+@media(max-width:992px){
+
+header h1{
+
+    font-size:35px;
+
+}
+
+table{
+
+    width:98%;
+
+}
+
+table img{
+
+    width:180px;
+
+    height:120px;
+
+}
+
+nav a{
+
+    display:block;
+
+    margin:10px auto;
+
+    width:220px;
+
+}
+
+}
+
+/* =====================================
+      MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+body{
+
+    font-size:15px;
+
+}
+
+.banner{
+
+    height:220px;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+table{
+
+    display:block;
+
+    overflow-x:auto;
+
+}
+
+table img{
+
+    width:140px;
+
+    height:100px;
+
+}
+
+input,
+textarea,
+select{
+
+    font-size:15px;
+
+}
+
+button,
+input[type=submit],
+input[type=reset]{
+
+    width:100%;
+
+}
+
+footer{
+
+    padding:25px;
+
+}
+
+}
+
+/* =====================================
+      SMALL MOBILE
+===================================== */
+
+@media(max-width:480px){
+
+header h1{
+
+    font-size:28px;
+
+}
+
+.banner{
+
+    height:170px;
+
+}
+
+nav a{
+
+    width:90%;
+
+}
+
+table img{
+
+    width:100px;
+
+    height:80px;
+
+}
+
+}
+
+/* =====================================
+      END
+===================================== */
