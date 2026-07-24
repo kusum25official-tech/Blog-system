@@ -54,7 +54,7 @@
 
     <!-- ================= BLOG FORM ================= -->
 
-    <form>
+    <form id="blogForm">
 
         <table align="center"
                cellpadding="10"
@@ -69,6 +69,7 @@
 
                     <input
                            type="text"
+                           id="title"
                            placeholder="Enter Blog Title"
                            size="50"
                            required>
@@ -85,9 +86,11 @@
 
                     <input
                            type="text"
+                           id="author"
                            placeholder="Enter Author Name"
                            size="50"
                            required>
+        
 
                 </td>
 
@@ -101,6 +104,7 @@
 
                     <input
                            type="email"
+                           id="email"
                            placeholder="Enter Email"
                            size="50"
                            required>
@@ -117,6 +121,7 @@
 
                     <input
                            type="tel"
+                           id="phone"
                            placeholder="Enter Phone Number"
                            size="50">
 
@@ -130,7 +135,7 @@
 
                 <td>
 
-                    <select>
+                    <select id="category">
 
                         <option>HTML</option>
 
@@ -160,7 +165,7 @@
 
                 <td>
 
-                    <input type="date">
+                    <input type="date" id="date">
 
                 </td>
 
@@ -172,7 +177,7 @@
 
                 <td>
 
-                    <input type="file">
+                    <input type="file" id="image">
 
                 </td>
 
@@ -186,6 +191,7 @@
 
                     <input
                            type="text"
+                           id="tags"
                            placeholder="HTML, CSS, JavaScript"
                            size="50">
 
@@ -200,6 +206,7 @@
                 <td>
 
                     <textarea
+                              id="summary"
                               rows="5"
                               cols="50"
                               placeholder="Write short summary..."></textarea>
@@ -215,6 +222,7 @@
                 <td>
 
                     <textarea
+                              id="content"
                               rows="10"
                               cols="50"
                               placeholder="Write complete blog here..."></textarea>
@@ -231,6 +239,7 @@
 
                     <input
                            type="number"
+                           id="readingimes"
                            placeholder="Minutes">
 
                 </td>
@@ -243,11 +252,17 @@
 
                 <td>
 
-                    <input type="radio" name="level"> Beginner
+                    <!-- <input type="radio" name="level"> Beginner -->
 
-                    <input type="radio" name="level"> Intermediate
+                    <!-- <input type="radio" name="level"> Intermediate -->
 
-                    <input type="radio" name="level"> Advanced
+                    <!-- <input type="radio" name="level"> Advanced -->
+
+                    <input type="radio" name="level" value="Beginner"> Beginner
+
+                    <input type="radio" name="level" value="Intermediate"> Intermediate
+
+                    <input type="radio" name="level" value="Advanced"> Advanced
 
                 </td>
 
@@ -259,11 +274,17 @@
 
                 <td>
 
-                    <input type="checkbox"> Publish Now
+                    <!-- <input type="checkbox"> Publish Now
 
                     <br>
 
-                    <input type="checkbox"> Save as Draft
+                    <input type="checkbox"> Save as Draft -->
+
+                    <input type="checkbox" name="status" value="Publish"> Publish Now
+
+                    <br>
+
+                    <input type="checkbox" name="status" value="Draft"> Save as Draft
 
                 </td>
 
@@ -328,7 +349,8 @@
         <p><b>Designed By Kusum Chaurasia</b></p>
 
     </footer>
-
+         <script src="script.js"></script>
 </body>
-
+        
 </html>
+
