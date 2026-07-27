@@ -863,3 +863,109 @@ table img{
 /* =====================================
       END
 ===================================== */
+
+/* ==========================
+   DAY 7 - Latest Blogs
+========================== */
+
+#blogsContainer{
+    width:90%;
+    margin:40px auto;
+}
+
+.blog-card{
+    background:#ffffff;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.blog-card:hover{
+    transform:translateY(-5px);
+}
+
+.blog-card h2{
+    color:#1f3c88;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.blog-card p{
+    margin:8px 0;
+    font-size:17px;
+}
+
+.blog-card strong{
+    color:#000;
+}
+
+.blog-card hr{
+    margin-top:15px;
+    border:1px solid #ddd;
+}
+
+/* Tumhara purana CSS */
+
+/* ...bahut saara CSS... */
+
+/* ==========================
+   DAY 7 - Latest Blogs
+========================== */
+
+#blogsContainer{
+    width:90%;
+    margin:40px auto;
+}
+
+.blog-card{
+    background:#ffffff;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+    text-align:left;
+}
+
+.blog-card:hover{
+    transform:translateY(-5px);
+}
+
+.blog-card h2{
+    color:#1f3c88;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.blog-card p{
+    margin:8px 0;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.blog-card strong{
+    color:#000;
+}
+
+.blog-card hr{
+    margin-top:15px;
+    border:1px solid #ddd;
+}
+
+
+.read-btn{
+    margin-top:15px;
+    padding:10px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.read-btn:hover{
+    background:#1d4ed8;
+}

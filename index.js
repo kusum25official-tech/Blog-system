@@ -1,12 +1,40 @@
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 const PORT = 3000;
 
-// Middleware
+app.use(cors());
 app.use(express.json());
 
+// // Middleware
+// app.use(cors());
+// app.use(express.json());
+
 // Store Blogs
-const blogs = [];
+const blogs = [
+    {
+        id: 1,
+        title: "Express.js Tutorial",
+        author: "Kusum Chaurasia",
+        category: "Backend",
+        content: "Learning Express.js APIs"
+    },
+    {
+        id: 2,
+        title: "HTML Basics",
+        author: "Kusum Chaurasia",
+        category: "Frontend",
+        content: "HTML is the foundation of web development."
+    },
+    {
+        id: 3,
+        title: "JavaScript DOM",
+        author: "Kusum Chaurasia",
+        category: "JavaScript",
+        content: "DOM Manipulation makes web pages interactive."
+    }
+];
 
 // Home Route
 app.get("/", (req, res) => {
@@ -39,7 +67,6 @@ app.post("/blogs", (req, res) => {
     });
 
 });
-
 
 // Server
 app.listen(PORT, () => {
