@@ -2,74 +2,133 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// // Middleware
-// app.use(cors());
-// app.use(express.json());
-
-// Store Blogs
-const blogs = [
-    {
-        id: 1,
-        title: "Express.js Tutorial",
-        author: "Kusum Chaurasia",
-        category: "Backend",
-        content: "Learning Express.js APIs"
-    },
-    {
-        id: 2,
-        title: "HTML Basics",
-        author: "Kusum Chaurasia",
-        category: "Frontend",
-        content: "HTML is the foundation of web development."
-    },
-    {
-        id: 3,
-        title: "JavaScript DOM",
-        author: "Kusum Chaurasia",
-        category: "JavaScript",
-        content: "DOM Manipulation makes web pages interactive."
-    }
+let blogs = [
+  {
+    id: 1,
+    title: "Express.js Tutorial",
+    author: "Kusum Chaurasia",
+    email: "kusum@gmail.com",
+    phone: "9876543210",
+    category: "Backend",
+    date: "2026-07-28",
+    image: "",
+    tags: "Express, Node",
+    summary: "Learning Express.js APIs",
+    content:
+      "Learning Express.js APIs with CRUD operations. This is a sample blog content created for the Blog Management System project. It contains enough text for testing validation and update functionality.",
+    readingTime: 5,
+    difficulty: "Beginner",
+    status: ["Publish"]
+  },
+  {
+    id: 2,
+    title: "JavaScript Basics",
+    author: "Rahul",
+    email: "rahul@gmail.com",
+    phone: "9876501234",
+    category: "JavaScript",
+    date: "2026-07-29",
+    image: "",
+    tags: "JS",
+    summary: "JavaScript Fundamentals",
+    content:
+      "JavaScript is one of the most popular programming languages. This sample blog is added to test the view, edit and update functionality of the project.",
+    readingTime: 7,
+    difficulty: "Intermediate",
+    status: ["Draft"]
+  }
 ];
 
-// Home Route
+// ======================
+// HOME
+// ======================
+
 app.get("/", (req, res) => {
-    res.send("🚀 Blog Management System Backend is Running!");
-    
+  res.send("Blog API Running Successfully");
 });
 
-    // GET Route
+// ======================
+// GET ALL BLOGS
+// ======================
+
 app.get("/blogs", (req, res) => {
-
-    res.status(200).json(blogs);
-
+  res.status(200).json(blogs);
 });
 
-// POST Route
+// ======================
+// ADD BLOG
+// ======================
+
 app.post("/blogs", (req, res) => {
-    const newBlog = {
-        id: blogs.length + 1,
-        title: req.body.title,
-        author: req.body.author,
-        category: req.body.category,
-        content: req.body.content
 
-    };
+  const blog = {
+    id: blogs.length + 1,
+    ...req.body
+  };
 
-    blogs.push(newBlog);
-    res.status(201).json({
-        message: "✅ Blog Added Successfully",
-        blog: newBlog
-    });
+  blogs.push(blog);
+
+  res.status(201).json({
+    message: "Blog Added Successfully",
+    blog
+  });
 
 });
 
-// Server
+// ======================
+// UPDATE BLOG
+// ======================
+
+app.put("/blogs/:id", (req, res) => {
+
+  const id = Number(req.params.id);
+
+  const index = blogs.findIndex(blog => blog.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({
+      message: "Blog Not Found"
+    });
+  }
+
+  blogs[index] = {
+    ...blogs[index],
+    ...req.body
+  };
+
+  res.status(200).json({
+    message: "Blog Updated Successfully",
+    blog: blogs[index]
+  });
+
+});
+
+// ======================
+// DELETE BLOG (Optional)
+// ======================
+
+app.delete("/blogs/:id", (req, res) => {
+
+  const id = Number(req.params.id);
+
+  blogs = blogs.filter(blog => blog.id !== id);
+
+  res.json({
+    message: "Blog Deleted Successfully"
+  });
+
+});
+
+// ======================
+// SERVER
+// ======================
+
+const PORT = 3000;
+
 app.listen(PORT, () => {
-     console.log(`Server is running at http://localhost:${PORT}`);
-     
+  console.log(`Server running at http://localhost:${PORT}`);
 });

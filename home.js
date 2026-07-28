@@ -68,8 +68,18 @@ async function loadBlogs() {
 
             <p>${blog.content}</p>
 
-            <button class="read-btn">Read More</button>
+            <div class="blog-buttons">
 
+            <button class="read-btn">
+            Read More
+        </button>
+
+            <button class="edit-btn"
+            onclick="editBlog(${blog.id})">
+            Edit
+        </button>
+
+</div>
         </div>
     `;
 
@@ -82,6 +92,11 @@ async function loadBlogs() {
         alert(error);
 
     }
+
+}
+    function editBlog(id) {
+
+    window.location.href = "add-blog.html?id=" + id;
 
 }
 
