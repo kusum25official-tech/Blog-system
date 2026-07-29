@@ -40,7 +40,24 @@ let blogs = [
     readingTime: 7,
     difficulty: "Intermediate",
     status: ["Draft"]
-  }
+  },
+  {
+  id: 3,
+  title: "HTML Basics",
+  author: "Kusum Chaurasia",
+  email: "kusum@gmail.com",
+  phone: "9876543210",
+  category: "HTML",
+  date: "2026-07-29",
+  image: "",
+  tags: "HTML",
+  summary: "Introduction to HTML",
+  content: "HTML is the standard markup language used to create web pages. It is the foundation of every website.",
+  readingTime: 4,
+  difficulty: "Beginner",
+  status: ["Publish"]
+}
+
 ];
 
 // ======================
@@ -50,7 +67,7 @@ let blogs = [
 app.get("/", (req, res) => {
   res.send("Blog API Running Successfully");
 });
-
+  
 // ======================
 // GET ALL BLOGS
 // ======================

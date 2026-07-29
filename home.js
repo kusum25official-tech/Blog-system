@@ -79,6 +79,11 @@ async function loadBlogs() {
             Edit
         </button>
 
+        <button class="delete-btn"
+             onclick="deleteBlog(${blog.id})">
+             Delete
+        </button>
+
 </div>
         </div>
     `;
@@ -94,10 +99,45 @@ async function loadBlogs() {
     }
 
 }
-    function editBlog(id) {
+
+function editBlog(id) {
 
     window.location.href = "add-blog.html?id=" + id;
 
 }
 
 window.onload = loadBlogs;
+
+// ==============================
+// DAY 9 - DELETE BLOG
+// ==============================
+
+async function deleteBlog(id) {
+
+    const confirmDelete = confirm("Are you sure you want to delete this blog?");
+
+    if (!confirmDelete) {
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:3000/blogs/" + id, {
+            method: "DELETE"
+        });
+
+        const data = await response.json();
+
+        alert(data.message);
+
+        loadBlogs();
+
+    } catch (error) {
+
+        console.log(error);
+
+        alert("Delete Failed");
+
+    }
+
+}
