@@ -128,13 +128,26 @@ app.put("/blogs/:id", (req, res) => {
 // DELETE BLOG (Optional)
 // ======================
 
+// app.delete("/blogs/:id", (req, res) => {
+//   const id = Number(req.params.id);
+//   blogs = blogs.filter(blog => blog.id !== id);
+//   res.json({
+//     message: "Blog Deleted Successfully"
+//   });
+
+// });
+
+
 app.delete("/blogs/:id", (req, res) => {
-
   const id = Number(req.params.id);
-
+  const index = blogs.findIndex(blog => blog.id === id);
+  if (index === -1) {
+    return res.status(404).json({
+      message: "Blog Not Found"
+    });
+  }
   blogs = blogs.filter(blog => blog.id !== id);
-
-  res.json({
+  res.status(200).json({
     message: "Blog Deleted Successfully"
   });
 

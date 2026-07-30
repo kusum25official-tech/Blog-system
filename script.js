@@ -7,7 +7,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 const form = document.getElementById("blogForm");
-
 const title = document.getElementById("title");
 const author = document.getElementById("author");
 const email = document.getElementById("email");
@@ -19,6 +18,7 @@ const tags = document.getElementById("tags");
 const summary = document.getElementById("summary");
 const content = document.getElementById("content");
 const readingTime = document.getElementById("readingTime");
+const submitBtn = document.getElementById("submitBtn");
 
 // ===============================
 // GET BLOG ID
@@ -33,6 +33,7 @@ const blogId = params.get("id");
 
 if (blogId) {
 
+    submitBtn.value = "Update Blog";
     fetch("http://localhost:3000/blogs")
         .then(response => response.json())
         .then(blogs => {
@@ -363,13 +364,9 @@ valid=false;
 // ======================
 
 const status=document.querySelectorAll('input[type="checkbox"]:checked');
-
 if(status.length===0){
-
 showError(
-
 document.querySelector('input[type="checkbox"]'),
-
 "Please select Publish or Draft"
 
 );
@@ -440,70 +437,54 @@ alert("Update Failed");
 else{
 
 // ADD NEW BLOG
-
-fetch("http://localhost:3000/blogs",{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
-},
-
-body:JSON.stringify(blogData)
-
+fetch("http://localhost:3000/blogs", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(blogData)
 })
-
-.then(response=>response.json())
-
-.then(data=>{
-
-alert(data.message);
-
-form.reset();
-
+.then(response => response.json())
+.then(data => {
+    alert(data.message);
+    window.location.href = "index.html";
 })
-
-.catch(error=>{
-
-console.log(error);
-
-alert("Blog Add Failed");
-
+.catch(error => {
+    console.log(error);
+    alert("Blog Add Failed");
 });
 
-}
+}   // else close
 
-}
+}   // if(valid) close
 
-});
+}); // form.addEventListener close
 
 // ======================
 // LIVE VALIDATION
 // ======================
 
-title.addEventListener("input",removeErrors);
+title.addEventListener("input", removeErrors);
 
-author.addEventListener("input",removeErrors);
+author.addEventListener("input", removeErrors);
 
-email.addEventListener("input",removeErrors);
+email.addEventListener("input", removeErrors);
 
-phone.addEventListener("input",removeErrors);
+phone.addEventListener("input", removeErrors);
 
-category.addEventListener("change",removeErrors);
+category.addEventListener("change", removeErrors);
 
-date.addEventListener("change",removeErrors);
+date.addEventListener("change", removeErrors);
 
-image.addEventListener("change",removeErrors);
+image.addEventListener("change", removeErrors);
 
-tags.addEventListener("input",removeErrors);
+tags.addEventListener("input", removeErrors);
 
-summary.addEventListener("input",removeErrors);
+summary.addEventListener("input", removeErrors);
 
-content.addEventListener("input",removeErrors);
+content.addEventListener("input", removeErrors);
 
-readingTime.addEventListener("input",removeErrors);
+readingTime.addEventListener("input", removeErrors);
 
 // ======================
 // RESET CONFIRMATION

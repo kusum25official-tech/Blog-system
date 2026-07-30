@@ -17,12 +17,11 @@ async function loadBlogs() {
         if (!response.ok) {
             throw new Error("Server Error: " + response.status);
         }
+        const container = document.getElementById("blogsContainer");
+        container.innerHTML = "<h3>Loading blogs...</h3>";
 
         const blogs = await response.json();
-
         console.log("Blogs:", blogs);
-
-        const container = document.getElementById("blogsContainer");
 
         if (!container) {
             throw new Error("blogsContainer not found");
@@ -89,19 +88,14 @@ async function loadBlogs() {
     `;
 
 });
-
     } catch (error) {
-
         console.error("ERROR:", error);
-
         alert(error);
-
     }
 
 }
 
 function editBlog(id) {
-
     window.location.href = "add-blog.html?id=" + id;
 
 }
@@ -125,11 +119,12 @@ async function deleteBlog(id) {
         const response = await fetch("http://localhost:3000/blogs/" + id, {
             method: "DELETE"
         });
+        if (!response.ok) {
+        throw new Error("Delete failed");
+}
 
         const data = await response.json();
-
         alert(data.message);
-
         loadBlogs();
 
     } catch (error) {
