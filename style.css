@@ -964,7 +964,46 @@ table img{
     cursor:pointer;
     font-size:16px;
 }
-
 .read-btn:hover{
     background:#1d4ed8;
+}
+
+/* ==========================
+   DAY 11 - Animation & Hover
+========================== */
+
+.blog-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.edit-btn{
+    background:#10b981;
+}
+
+.edit-btn:hover{
+    background:#059669;
+    transform:scale(1.05);
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+    transform:scale(1.05);
+}
+
+.banner{
+    transition:.5s;
+}
+
+.banner:hover{
+    transform:scale(1.02);
+}
+
+.blog-card{
+    animation:fadeIn .8s ease;
 }
