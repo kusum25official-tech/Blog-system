@@ -35,26 +35,6 @@ async function loadBlogs() {
         }
 
         blogs.forEach(blog => {
-//             container.innerHTML += `
-//            <div class="blog-card">
-//            <h2>${blog.title}</h2>
-
-//            <p><strong>👤 Author:</strong> ${blog.author}</p>
-
-//            <p><strong>📂 Category:</strong> ${blog.category}</p>
-
-//            <p>${blog.content}</p>
-
-//            <button class="read-btn"
-//            onclick="showBlog('${blog.title}')">
-//            Read More
-//          </button>
-
-//         </div>
-// `});
-
-
-
 
          container.innerHTML += `
          <div class="blog-card">
