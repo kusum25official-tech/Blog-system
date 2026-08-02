@@ -48,6 +48,9 @@
              alt="Contact Banner">
 
         <h2>📞 Contact Us</h2>
+           <a href="tel:+9315252692">
+           Contact With Us
+           </a>
 
         <p>
 
@@ -69,7 +72,7 @@
 
     </center>
 
-    <form>
+    <form id="contactForm">
 
         <table
                border="1"
@@ -110,7 +113,6 @@
             </tr>
 
             <tr>
-
                 <td><b>Phone Number</b></td>
 
                 <td>
@@ -119,7 +121,6 @@
                            type="tel"
                            placeholder="Enter phone number"
                            size="50">
-
                 </td>
 
             </tr>
@@ -174,8 +175,9 @@
                 <td colspan="2" align="center">
                     <input type="reset" value="Reset">
                     &nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="Send Message">
-
+                    <input type="submit"
+                    id="sendBtn"
+                    value="Send Message">
                 </td>
 
             </tr>
@@ -203,14 +205,14 @@
         <tr>
 
             <td><b>Email</b></td>
-            <td>blog@gmail.com</td>
+            <td>kusumc763@gmail.com</td>
 
         </tr>
 
         <tr>
 
             <td><b>Phone</b></td>
-            <td>+91 9876543210</td>
+            <td>+91 9315252692</td>
 
         </tr>
 
@@ -237,16 +239,18 @@
     <center>
 
         <h2>🌐 Connect With Us</h2>
+           <a href="#contactForm" class="btn-contact">
+           Contact With Us
+        </a>
+        
+            <div class="social-links">
 
-        <p>
+            <a href="https://instagram.com" target="_blank">Instagram</a> |
+            <a href="https://www.linkedin.com/in/kusum-chaurasia-a0b55a327/" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/kusum25official-tech" target="_blank">GitHub</a> |
+            <a href="https://youtube.com" target="_blank">YouTube</a>
 
-            Facebook |
-            Instagram |
-            LinkedIn |
-            GitHub |
-            YouTube
-
-        </p>
+        </div>
 
     </center>
 
@@ -285,7 +289,6 @@
              alt="Office Map">
 
         <p>
-
             Our office is located in Greater Noida, Uttar Pradesh.
 
         </p>
@@ -298,17 +301,53 @@
 
     <footer align="center">
 
-        <h3>Blog Management System</h3>
-        <p>Email : blog@gmail.com</p>
-        <p>Phone : +91 9876543210</p>
-        <p>Website : www.blogmanagementsystem.com</p>
-        <p>© 2026 Blog Management System. All Rights Reserved.</p>
+    <h3>Blog Management System</h3>
 
-        </p>@<b>Designed By Kusum Chaurasia</b></p>
+    <p>
+        Email :
+        <a href="mailto:kusumc763@gmail.com">
+            kusumc763@gmail.com
+        </a>
+    </p>
 
+    <p>
+        Phone :
+        <a href="tel:+919315252692">
+            +91 9315252692
+        </a>
+    </p>
 
-    </footer>
+    <div class="social-links">
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+        <a href="https://www.linkedin.com/in/kusum-chaurasia-a0b55a327/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/kusum25official-tech" target="_blank">GitHub</a>
+    </div>
 
+    <p>
+        Website :
+        <a href="https://kusum25official-tech.github.io/Blog-system/" target="_blank">
+            https://kusum25official-tech.github.io/Blog-system/
+        </a>
+    </p>
+
+    <p>© 2026 Blog Management System. All Rights Reserved.</p>
+
+    <p>
+        Designed By <b>Kusum Chaurasia</b>
+    </p>
+
+</footer>
+     <script>
+        const contactForm = document.getElementById("contactForm");
+
+        if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Message Sent Successfully!");
+        contactForm.reset();
+    });
+}
+</script>
+</script>
 </body>
-
 </html>

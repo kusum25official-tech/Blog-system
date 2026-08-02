@@ -38,7 +38,12 @@ if (blogId) {
         .then(response => response.json())
         .then(blogs => {
 
+            console.log("Blog ID:", blogId);
+            console.log("Blogs:", blogs);
+
             const blog = blogs.find(item => item.id == blogId);
+
+            console.log("Found Blog:", blog);
 
             if (blog) {
                 title.value = blog.title || "";

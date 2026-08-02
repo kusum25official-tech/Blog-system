@@ -49,11 +49,12 @@ async function loadBlogs() {
 
             <div class="blog-buttons">
 
-            <button class="read-btn">
+        <button class="read-btn"
+            onclick="readBlog(${blog.id})">
             Read More
         </button>
 
-            <button class="edit-btn"
+        <button class="edit-btn"
             onclick="editBlog(${blog.id})">
             Edit
         </button>
@@ -78,6 +79,9 @@ async function loadBlogs() {
 function editBlog(id) {
     window.location.href = "add-blog.html?id=" + id;
 
+}
+function readBlog(id) {
+    window.location.href = "view-blog.html?id=" + id;
 }
 
 window.onload = loadBlogs;

@@ -860,6 +860,19 @@ table img{
 
 }
 
+/* .social-links a{
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.social-links a:hover{
+    color:#4da3ff;
+    text-decoration:underline;
+
+} */
+
 /* =====================================
       END
 ===================================== */
@@ -1006,4 +1019,21 @@ table img{
 
 .blog-card{
     animation:fadeIn .8s ease;
+}
+
+
+
+.btn-contact{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 22px;
+    background:#2563eb;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-contact:hover{
+    background:#1d4ed8;
 }
