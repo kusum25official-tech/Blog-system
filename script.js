@@ -34,7 +34,7 @@ const blogId = params.get("id");
 if (blogId) {
 
     submitBtn.value = "Update Blog";
-    fetch("http://localhost:3000/blogs")
+    fetch("https://blog-system-lcts.onrender.com/blogs")
         .then(response => response.json())
         .then(blogs => {
 
@@ -405,44 +405,37 @@ const blogData = {
 if(blogId){
 
 // UPDATE BLOG
+fetch("https://blog-system-lcts.onrender.com/blogs/" + blogId, {
 
-fetch("http://localhost:3000/blogs/" + blogId, {
+    method: "PUT",
 
-method: "PUT",
+    headers: {
+        "Content-Type": "application/json"
+    },
 
-headers: {
-
-"Content-Type":"application/json"
-
-},
-
-body: JSON.stringify(blogData)
+    body: JSON.stringify(blogData)
 
 })
-
-.then(response => response.json())
-
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Update Failed");
+    }
+    return response.json();
+})
 .then(data => {
-
-alert(data.message);
-
-window.location.href = "index.html";
-
+    alert(data.message);
+    window.location.href = "index.html";
 })
-
 .catch(error => {
-
-console.log(error);
-
-alert("Update Failed");
-
+    console.log(error);
+    alert("Update Failed");
 });
 
 }
 else{
 
 // ADD NEW BLOG
-fetch("http://localhost:3000/blogs", {
+fetch("https://blog-system-lcts.onrender.com/blogs", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"

@@ -3,6 +3,7 @@
 // ==============================
 
 alert("Home.js Loaded Successfully");
+console.log("Home.js Loaded Successfully");
 
 async function loadBlogs() {
 
@@ -10,7 +11,7 @@ async function loadBlogs() {
 
         console.log("Fetching blogs...");
 
-        const response = await fetch("http://localhost:3000/blogs");
+        const response = await fetch("https://blog-system-lcts.onrender.com/blogs");
 
         console.log("Response:", response);
 
@@ -69,18 +70,35 @@ async function loadBlogs() {
     `;
 
 });
-    } catch (error) {
-        console.error("ERROR:", error);
-        alert(error);
-    }
+    }  catch (error) {
+    console.error("ERROR:", error);
+    const container = document.getElementById("blogsContainer");
 
-}
+    if (container) {
+        container.innerHTML = `
+        <div style="text-align:center;padding:30px;">
+            <h2>⚠ Blogs cannot be loaded</h2>
+            
+            <p>Unable to connect to the backend server.</p>
+        </div>`;
+    }
+}  
+
+} 
 
 function editBlog(id) {
     window.location.href = "add-blog.html?id=" + id;
 
 }
+// function readBlog(id) {
+//     window.location.href = "view-blog.html?id=" + id;
+// }
 function readBlog(id) {
+
+    console.log("Read Blog ID:", id);
+
+    alert("ID = " + id);
+
     window.location.href = "view-blog.html?id=" + id;
 }
 
@@ -100,9 +118,9 @@ async function deleteBlog(id) {
 
     try {
 
-        const response = await fetch("http://localhost:3000/blogs/" + id, {
+            const response = await fetch("https://blog-system-lcts.onrender.com/blogs/" + id, {
             method: "DELETE"
-        });
+         });
         if (!response.ok) {
         throw new Error("Delete failed");
 }
@@ -112,11 +130,7 @@ async function deleteBlog(id) {
         loadBlogs();
 
     } catch (error) {
-
-        console.log(error);
-
-        alert("Delete Failed");
-
+    console.log(error);
+    alert("Unable to delete the blog. Please try again.");
     }
-
 }

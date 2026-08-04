@@ -75,6 +75,25 @@ app.get("/", (req, res) => {
 app.get("/blogs", (req, res) => {
   res.status(200).json(blogs);
 });
+// ======================
+// GET SINGLE BLOG
+// ======================
+
+app.get("/blogs/:id", (req, res) => {
+
+  const id = Number(req.params.id);
+
+  const blog = blogs.find(blog => blog.id === id);
+
+  if (!blog) {
+    return res.status(404).json({
+      message: "Blog Not Found"
+    });
+  }
+
+  res.status(200).json(blog);
+
+});
 
 // ======================
 // ADD BLOG
@@ -157,8 +176,8 @@ app.delete("/blogs/:id", (req, res) => {
 // SERVER
 // ======================
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
